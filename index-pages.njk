@@ -1,0 +1,36 @@
+---
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+permalink: "/{{ lang.href | slugify }}/"
+layout: base-layout.njk
+---
+
+{% include 'header.njk' %}
+
+<article>
+
+    {% include 'about.njk' %}
+    
+    <h2> Latest </h2>
+    {% set postList = collections[lang.type] %}
+    {% include 'post-list.njk' %}
+
+    <div class="more">
+	<a href="{{ lang.href }}archive">more </a>
+    </div>
+
+    <h2> Categories </h2>
+    <div>
+	<div class="categories">
+	    {% set tagsList = collections[lang.type+"TagsList"] %}
+	    {% include 'tag.njk' %}
+	</div>
+    </div>
+
+</article>
+
+{% include 'footer.njk' %}
+
+

@@ -1,0 +1,17 @@
+<ul>
+    {% for post in postList %}
+	{% if post.data.title != blank %}
+	    <li>
+		<div class="page-item">
+		    <div class="title-item">
+			<a href="{{ post.url }}">{{ post.data.title }} </a>
+		    </div>
+		    <div class="category-items">
+			{% set tagsList = post.data.tags %}
+			{% include 'tag.njk' %}
+		    </div>
+		</div>
+	    </li>
+	{% endif %}
+    {% endfor %}
+</ul>

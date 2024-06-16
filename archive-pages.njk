@@ -1,0 +1,15 @@
+---
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+permalink: "{{ lang.href | slugify }}archive"
+layout: post-layout.njk
+---
+
+<div id="content" class="content">
+    <h1 class="title">Archive</h1>
+    {% set base_url = lang.href %}
+    {% set postList = collections[lang.type] %}
+    {% include 'post-list.njk' %}    
+</div>

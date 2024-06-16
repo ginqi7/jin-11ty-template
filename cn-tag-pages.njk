@@ -1,0 +1,22 @@
+---
+pagination:
+  data: collections.cnTagsList
+  size: 1
+  alias: tag
+permalink: /cn/tags/{{ tag }}/
+layout: post-layout
+---
+
+<div id="content" class="content">
+    <h1 class="title">{{ tag | capitalize }}</h1>
+    {% set base_url = "/cn/" %}
+    {% set cnPostList = collections.cn %}
+    {% set postList = [] %}
+    {% for post in cnPostList %}
+	{% if post.data.tags.indexOf(tag) > -1  %}
+	    {% set postList = (postList.push(post), postList) %}
+	{% endif %}
+    {%endfor%}
+
+    {% include 'post-list.njk' %}    
+</div>

@@ -1,0 +1,13 @@
+<h2> </span> About me </h2>
+<p>{{ lang.me | safe }}</p>
+
+{% for icon in icons %}
+{% if icon.type != lang.type %}
+<div class="image-container">
+  <a href= "{{ icon.href }}"  class= "{{ icon.type }}">
+    <img src="{{ icon.src }}" alt="{{ icon.type }}">
+  </a>
+  <a href="{{ icon.href }}" class="image-text"> {{icon.show}}  </a>
+</div>
+{% endif %}
+{% endfor %}
