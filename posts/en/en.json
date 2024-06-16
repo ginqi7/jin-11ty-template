@@ -1,4 +1,8 @@
 {
     "layout" : "post-layout",
-    "permalink" : "/{{ page.fileSlug }}"
+    "permalink" : "/{{ page.fileSlug }}/",
+    "lang" : {
+	"type" : "en",
+	"href" : "/"
+    }
 }

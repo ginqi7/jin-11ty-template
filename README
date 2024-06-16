@@ -1,7 +1,0 @@
-A eleventy template.
-
-1. Support multiple language posts in separate directories.
-2. Simple and clean web pages.
-
-
-npx @11ty/eleventy --serve
