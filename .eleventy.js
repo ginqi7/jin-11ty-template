@@ -51,8 +51,6 @@ function minifyChineseFonts() {
 	if (err) {
             throw err;
 	}
-
-	console.log(files[0]);
     });
 }
 
