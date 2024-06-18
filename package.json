@@ -1,5 +1,8 @@
 {
   "scripts": {
     "build": "npx @11ty/eleventy"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3"
   }
 }

@@ -5,7 +5,8 @@ module.exports = function(eleventyConfig) {
     
     // copy static files to output directory.
     eleventyConfig.addPassthroughCopy("static/*");
-    eleventyConfig.addPassthroughCopy("static/*/*");
+    eleventyConfig.addPassthroughCopy("static/fonts/*");
+    eleventyConfig.addPassthroughCopy("static/svg/*");
     
     // add some language collections.
     listPostLangs().forEach((lang) => {
@@ -20,7 +21,28 @@ module.exports = function(eleventyConfig) {
 	    })
 	    return Array.from(tagsSet)
 	})
-    })
+    });
+    
+    // minify css
+    const CleanCSS = require("clean-css");
+    const fs = require('fs');
+    const sourceCssDir = 'static/css/'
+    const targetCssDir = '_site/static/css/'
+    if (!fs.existsSync(targetCssDir)) {
+	fs.mkdirSync(targetCssDir, {recursive : true});
+    }
+    const files = fs.readdirSync(sourceCssDir);
+    files.forEach(file => {
+	var inputFile = sourceCssDir + file
+	var input = fs.readFileSync(inputFile, 'utf8');
+	var output = new CleanCSS().minify(input);
+	fs.writeFile(targetCssDir + file, output.styles, function (err) {
+            if (err) return console.log('Error minifying main.css' + err);
+	});
+    });
+
+
+
 };
 
 

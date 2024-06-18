@@ -15,10 +15,13 @@ layout: base-layout.njk
     
     <h2> Latest </h2>
     {% set postList = collections[lang.type] %}
+    {% set allSize = postList | length%}
+    {% set postList = postList.slice(0, project.indexPostSize) %}
+    {% set indexPostSize = postList | length %}
     {% include 'post-list.njk' %}
 
     <div class="more">
-	<a href="{{ lang.href }}archive/">show more 0 articles, </a> 
+	<a href="{{ lang.href }}archive/">show more {{allSize - indexPostSize}} articles </a> 
     </div>
 
     <h2> Categories </h2>
