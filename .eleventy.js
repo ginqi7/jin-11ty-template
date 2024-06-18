@@ -5,7 +5,7 @@ module.exports = function(eleventyConfig) {
     
     // copy static files to output directory.
     eleventyConfig.addPassthroughCopy("static/*");
-    eleventyConfig.addPassthroughCopy("static/fonts/*");
+    eleventyConfig.addPassthroughCopy("static/fonts/en/*");
     eleventyConfig.addPassthroughCopy("static/svg/*");
     
     // add some language collections.
@@ -24,6 +24,40 @@ module.exports = function(eleventyConfig) {
     });
     
     // minify css
+    minifyCss();
+    // minify chinese fonts.
+    minifyChineseFonts();
+
+};
+
+function minifyChineseFonts() {
+    const Fontmin = require('fontmin'); 
+    const zhPostsDirectory = 'posts/zh/'; 
+    const dataDirectory = "_data/"
+    const content = removeDuplicateCharacters
+    (extractChineseChars
+     (readFilesInDirectory(zhPostsDirectory)
+      + readFilesInDirectory(dataDirectory)
+     ))
+    const fontmin = new Fontmin()
+	  .src('static/fonts/zh/*')
+	  .use(Fontmin.glyph({
+              text: content,
+              hinting: false         
+	  }))
+	  .dest('_site/static/fonts/zh/');
+    
+    fontmin.run(function (err, files) {
+	if (err) {
+            throw err;
+	}
+
+	console.log(files[0]);
+    });
+}
+
+
+function minifyCss() {
     const CleanCSS = require("clean-css");
     const fs = require('fs');
     const sourceCssDir = 'static/css/'
@@ -40,10 +74,7 @@ module.exports = function(eleventyConfig) {
             if (err) return console.log('Error minifying main.css' + err);
 	});
     });
-
-
-
-};
+}
 
 
 function listPostLangs() {
@@ -69,4 +100,30 @@ function getAllDirectories(directoryPath) {
 }
 
 
+function readFilesInDirectory(directoryPath) {
+    try {
+	const files =  fs.readdirSync(directoryPath);
+	var content = "";
+	for (let file of files) {
+            const filePath = directoryPath + file
+            const data =  fs.readFileSync(filePath, 'utf8');
+	    content += data
+	}
+	return content
+    } catch (err) {
+	console.error('Error reading directory:', err);
+    }
+}
 
+function extractChineseChars(str) {
+    const regex = /[\u4E00-\u9FFF]/g;
+    const chineseChars = str.match(regex);
+    return chineseChars ? chineseChars.join('') : '';
+}
+
+
+
+
+function removeDuplicateCharacters(str) {
+    return [...new Set(str)].join('');
+}
