@@ -6,8 +6,8 @@ module.exports = function () {
 	    "me" : "<p>I am a Software Engineer.</p> <p> I like reading , writting and coding.<p>"
 	},
 	{
-	    "type" : "cn",
-	    "href" : "/cn/",
+	    "type" : "zh",
+	    "href" : "/zh/",
 	    "me": "<p>程序员</p>"
 	}
     ]

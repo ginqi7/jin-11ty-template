@@ -1,4 +1,7 @@
 ---
+lang:
+  type: en
+  href: /
 pagination:
   data: collections.enTagsList
   size: 1
@@ -9,7 +12,7 @@ layout: post-layout
 
 <div id="content" class="content">
     <h1 class="title">{{ tag | capitalize }}</h1>
-    {% set base_url = "/" %}
+    {% set lang = {href : "/"} %}
     {% set enPostList = collections.en %}
     {% set postList = [] %}
     {% for post in enPostList %}
@@ -17,6 +20,5 @@ layout: post-layout
 	    {% set postList = (postList.push(post), postList) %}
 	{% endif %}
     {%endfor%}
-
     {% include 'post-list.njk' %}    
 </div>

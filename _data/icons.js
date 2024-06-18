@@ -22,9 +22,9 @@ module.exports = function () {
 	    "show" : "(English)"
 	},
 	{
-	    "type" : "cn",
+	    "type" : "zh",
 	    "src" : "/static/svg/languages.svg",
-	    "href" : "/cn",
+	    "href" : "/zh",
 	    "show" : "(Chinese)"
 	}
 	

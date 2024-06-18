@@ -1,19 +1,22 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css?family=Alkatra&text=Hello%20World');
-@import url('https://fonts.googleapis.com/css?family=Fira+Code');
+@import url('https://fonts.googleapis.com/css?family=Alkatra&text=Hello%20World&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
 @font-face {
     font-family: jinkaiFont;
     src: url("../fonts/jinkai.ttf") format("TrueType");
+    font-display: swap;
 }
 
 @font-face {
     font-family: monaco;
     src: url("../fonts/monaco.ttf") format("TrueType");
+    font-display: swap;
 }
 
 @font-face {
     font-family: alegreya;
     src: url("../fonts/Alegreya-Regular.ttf") format("TrueType");
+    font-display: swap;
 }
 
 body {

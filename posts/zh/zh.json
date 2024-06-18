@@ -1,0 +1,8 @@
+{
+    "layout" : "post-layout",
+    "permalink" : "/zh/{{ page.fileSlug }}/",
+    "lang" : {
+	"type" : "zh",
+	"href" : "/zh/"
+    }
+}
