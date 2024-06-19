@@ -5,6 +5,7 @@ This project is a eleventy template.
 
 1. Support multiple language posts in separate directories.
 2. Simple and clean web pages.
+3. Provide acceptable performace.
 
 ## Demo
 

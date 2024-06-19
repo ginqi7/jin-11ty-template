@@ -1,0 +1,14 @@
+{% set previousPost = collections[lang.type] | getPreviousCollectionItem %}
+{% set nextPost = collections[lang.type] | getNextCollectionItem %}
+
+{% if previousPost %}
+    <li>
+	Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+    </li>
+{% endif %}
+
+{% if nextPost %}
+    <li>
+	Next: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+    </li>
+{% endif %}
