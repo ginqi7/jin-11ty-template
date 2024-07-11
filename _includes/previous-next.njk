@@ -1,5 +1,5 @@
-{% set previousPost = collections[lang.type] | getPreviousCollectionItem %}
-{% set nextPost = collections[lang.type] | getNextCollectionItem %}
+{% set nextPost = collections[lang.type] | getPreviousCollectionItem %}
+{% set previousPost = collections[lang.type] | getNextCollectionItem %}
 
 {% if previousPost %}
     <li>
