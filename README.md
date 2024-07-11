@@ -12,7 +12,7 @@ This project is a eleventy template.
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fginqi7%2jin-11ty-template)
 
 - [Demo](https://jin-11ty-template.vercel.app)
-
+- [Author personal blog](http://qiqijin.com/)
 
 ## Getting Started
 
