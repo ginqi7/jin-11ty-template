@@ -168,16 +168,20 @@ li {
     margin-left: .1rem;
     border: #000 1px solid;
     border-radius: 3px;
-    padding-right: 0.2rem;
-    padding-left: 0.2rem;
+    padding: 0.3rem;
     width: auto;
-    font-size: .7rem;
+    font-size: .8rem;
     font-weight: bold;
     text-align: center;
 }
 
 .category-items {
     display:inline-flex;
+}
+
+.category-items .category-item {
+    padding: 0.2rem;
+    font-size: .7rem;
 }
 
 
