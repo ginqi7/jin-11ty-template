@@ -13,7 +13,7 @@ layout: archive-layout
 <div id="content" class="content">
     <h1 class="title">{{ tag | capitalize }}</h1>
     {% set lang = {href : "/"} %}
-    {% set enPostList = collections.en %}
+    {% set enPostList = collections.en | reverse %}
     {% set postList = [] %}
     {% for post in enPostList %}
 	{% if post.data.tags.indexOf(tag) > -1  %}

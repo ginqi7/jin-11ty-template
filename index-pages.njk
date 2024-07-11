@@ -14,7 +14,7 @@ layout: base-layout.njk
     {% include 'about.njk' %}
     
     <h2> Latest </h2>
-    {% set postList = collections[lang.type] %}
+    {% set postList = collections[lang.type] | reverse %}
     {% set allSize = postList | length%}
     {% set postList = postList.slice(0, project.indexPostSize) %}
     {% set indexPostSize = postList | length %}

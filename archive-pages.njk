@@ -9,6 +9,6 @@ layout: archive-layout.njk
 
 <div id="content" class="content">
     <h1 class="title">Archive</h1>
-    {% set postList = collections[lang.type] %}
+    {% set postList = collections[lang.type] | reverse %}
     {% include 'post-list.njk' %}    
 </div>

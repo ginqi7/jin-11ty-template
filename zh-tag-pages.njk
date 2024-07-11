@@ -12,7 +12,7 @@ layout: archive-layout
 
 <div id="content" class="content">
     <h1 class="title">{{ tag | capitalize }}</h1>
-    {% set zhPostList = collections.zh %}
+    {% set zhPostList = collections.zh | reverse %}
     {% set postList = [] %}
     {% for post in zhPostList %}
 	{% if post.data.tags.indexOf(tag) > -1  %}
