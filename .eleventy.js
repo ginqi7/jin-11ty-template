@@ -1,7 +1,9 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import Fontmin from 'fontmin';
+import CleanCSS from "clean-css";
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
     
     // copy static files to output directory.
     eleventyConfig.addPassthroughCopy("static/*");
@@ -31,7 +33,6 @@ module.exports = function(eleventyConfig) {
 };
 
 function minifyChineseFonts() {
-    const Fontmin = require('fontmin'); 
     const zhPostsDirectory = 'posts/zh/'; 
     const dataDirectory = "_data/"
     const content = removeDuplicateCharacters
@@ -56,8 +57,6 @@ function minifyChineseFonts() {
 
 
 function minifyCss() {
-    const CleanCSS = require("clean-css");
-    const fs = require('fs');
     const sourceCssDir = 'static/css/'
     const targetCssDir = '_site/static/css/'
     if (!fs.existsSync(targetCssDir)) {
@@ -118,9 +117,6 @@ function extractChineseChars(str) {
     const chineseChars = str.match(regex);
     return chineseChars ? chineseChars.join('') : '';
 }
-
-
-
 
 function removeDuplicateCharacters(str) {
     return [...new Set(str)].join('');

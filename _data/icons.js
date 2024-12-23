@@ -1,6 +1,6 @@
-const project = require("./project.json")
+import project from "./project.js";
 
-module.exports = function () {
+export default function () {
     return [
 	{
 	    "type" : "github",

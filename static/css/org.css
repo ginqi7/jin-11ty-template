@@ -209,6 +209,7 @@ li {
 .org-src-container {
     border: 1px solid #777;
     padding: 1rem;
+    border-radius: 0.5rem;
 }
 
 pre {
