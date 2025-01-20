@@ -1,0 +1,230 @@
+.org-bold {
+    font-weight: 400;
+}
+i,
+i a {
+    color: #999999;
+    font-style: normal;
+}
+.org-face-salient {
+    font-weight: 400;
+}
+
+/* Blinking cursor when strike-through */
+.custom {
+    animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* --- Side notes --- */
+div.side-note {
+    color: rgba(0, 0, 0, 0.5);
+    float: left;
+    font-size: 0.85em;
+    line-height: 1.25em;
+    margin-left: -24em;
+    width: 20em;
+}
+
+blockquote {
+    color: #999999;
+    padding-top: 0;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: 3px solid #cccccc;
+}
+
+ul.org-ul {
+    padding-left: 0;
+}
+ul.org-ul li {
+    list-style-type: none;
+    margin-bottom: 0.5em;
+}
+
+ul.org-ul li p {
+    display: inline-block;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+ol.org-ol {
+    padding-left: 0;
+    margin-left: 2em;
+    list-style: none;
+    counter-reset: li;
+}
+.org-ol li {
+    counter-increment: li;
+    margin-bottom: 0.25em;
+}
+
+#content,
+#postamble {
+    margin: 0 auto;
+    max-width: 720px;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+#postamble {
+    /*    border-top: 1px solid #999999; */
+    padding-top: 1.5em;
+}
+#postamble p,
+#postamble a {
+    color: #999999;
+    line-height: 1.25em;
+    margin: 0;
+    text-align: right;
+}
+
+h1.title {
+    font-size: 1.5em;
+    margin-top: 4em;
+    margin-bottom: 0em;
+    font-weight: 400;
+}
+
+span.subtitle {
+    display: inline-block;
+    margin-top: 0.25em;
+    font-size: 74.5%;
+    font-weight: 300;
+    color: #999999;
+}
+
+h3 {
+    padding-top: 0.5em;
+}
+h1,
+h2,
+h3,
+h4 {
+    color: black;
+    /* font-size: 1em; */
+    /* font-weight: 400; */
+    /* font-variant: all-small-caps; */
+    text-transform: uppercase;
+}
+/* h2 { */
+/*     padding-top: 5em; */
+/* } */
+/* h3 { */
+/*     padding-top: 3em; */
+/* } */
+
+body {
+    counter-reset: section;
+}
+h2 {
+    counter-reset: subsection;
+}
+
+code {
+    background-color: #f9f9f9;
+}
+
+pre {
+    color: #00008b;
+    background-color: #fbfbfb;
+    overflow: auto;
+    margin: 0em;
+    padding: 0.25em;
+    padding-left: 0.5em;
+    line-height: 1.35em;
+    border-left: 2px dotted #00008b;
+}
+pre.src {
+    position: relative;
+    overflow: visible;
+}
+
+/* --- Code folding --- */
+details {
+    color: rgba(48, 63, 159, 1);
+    background: #fbfbfb;
+    border: 1px solid rgba(48, 63, 159, 1);
+    border-radius: 3px;
+    padding: 0.25em;
+    margin-bottom: 1em;
+}
+details pre {
+    border: 0;
+}
+
+summary {
+    outline: 0;
+    color: rgba(48, 63, 159, 1);
+}
+summary::after {
+    font-size: 0.85em;
+    color: rgba(48, 63, 159, 0.25);
+    display: inline-block;
+    float: right;
+    content: "Click to fold/unfold";
+    padding-right: 0.5em;
+}
+
+/* --- Table --- */
+table {
+    table-layout: fixed;
+    min-width: 100%;
+}
+table,
+tbody,
+td,
+tr,
+th,
+colgroup,
+thead {
+    border: 0;
+    /*    padding: 0;*/
+}
+table {
+    margin-top: 1em;
+}
+thead {
+    border-bottom: 1px dashed black;
+}
+th {
+    text-align: center;
+    font-weight: bold;
+    padding: 0;
+    margin-bottom: 0.25em;
+    padding-bottom: 0.25em;
+    text-transform: uppercase;
+}
+td {
+    padding: 0;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+tr:nth-child(odd) {
+    background: #ffffff;
+}
+tbody {
+    /* border-bottom: 1px solid black; */
+}
+
+/* --- Description list --- */
+dd {
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+}
+
+/* --- Back links in header --- */
+div.back a {
+    float: right;
+    font-weight: 300;
+    color: #cccccc;
+    font-variant: small-caps;
+    margin-top: -2.5em;
+}
+/* h2 { border-bottom: .5px solid #999999; } */

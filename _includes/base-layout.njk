@@ -5,14 +5,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content= {{ project.author }} >
 	<meta name="description" content="This is a blog for {{ project.author }}.">
-	
+
 	<link rel="icon" type="image/x-icon" href="/static/favicon.ico">
 	<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="/static/css/org.css" defer>
+        <link rel="stylesheet" type="text/css" href="/static/css/font.css" defer>
+	<link rel="stylesheet" type="text/css" href="/static/css/base.css" defer>
+	<link rel="stylesheet" type="text/css" href="/static/css/colors.css" defer>
 	<title>{{ project.title }}</title>
 
     </head>
-    
+
     <body>
 	{{ content | safe }}
     </body>

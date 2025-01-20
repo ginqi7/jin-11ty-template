@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Alkatra&text=Hello%20World&display=swap");
+@font-face {
+    font-family: jinkaiFont;
+    src: url("../fonts/zh/jinkai.ttf") format("TrueType");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: monaco;
+    src: url("../fonts/en/monaco.ttf") format("TrueType");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: alegreya;
+    src: url("../fonts/en/Alegreya-Regular.ttf") format("TrueType");
+    font-display: swap;
+}

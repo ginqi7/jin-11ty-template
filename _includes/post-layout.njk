@@ -4,10 +4,12 @@ layout: base-layout.njk
 
 {% include 'header.njk' %}
 
-
+	<link rel="stylesheet" type="text/css" href="/static/css/article.css" defer>
+        <link rel="stylesheet" type="text/css" href="/static/css/toc-block.css" defer>
+        <link rel="stylesheet" type="text/css" href="/static/css/before.css" defer>
 <article>
     <h1 class="title"> {{title}} </h1>
-    
+
     {%include 'tag-in-post.njk'%}
 
     {{ content | safe }}

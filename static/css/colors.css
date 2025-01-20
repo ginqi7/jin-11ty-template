@@ -1,0 +1,46 @@
+body {
+    color: #444;
+    background-color: #fff;
+}
+
+.category-item a {
+    color: #444;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b,
+pre code,
+blockquote,
+.header-title {
+    color: #222;
+}
+
+a {
+    color: #3273dc;
+}
+
+code {
+    background-color: #f2f2f2;
+}
+
+.helptext {
+    color: #777;
+}
+
+.errorlist {
+    color: #eba613;
+}
+ul.blog-posts li a:visited {
+    color: #8b6fcb;
+}
+
+.underline,
+b {
+    color: #000;
+}
