@@ -54,7 +54,6 @@ input {
 table {
     border-collapse: collapse;
     width: 100%;
-    text-align: center;
 }
 
 th {
@@ -118,7 +117,6 @@ ul.blog-posts li span {
 }
 
 li {
-    list-style: outside;
     margin: 0.4rem 0;
 }
 

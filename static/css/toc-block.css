@@ -7,7 +7,6 @@
 #table-of-contents ul {
     padding: 0;
     font-weight: 400;
-    list-style: none;
     counter-reset: list 0;
 }
 
