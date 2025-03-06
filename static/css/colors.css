@@ -1,12 +1,19 @@
+:root {
+    --color-text: #444;
+    --color-background: #fff;
+    --color-heading: #222;
+    --color-link: #3273dc;
+    --color-code-bg: #f2f2f2;
+    --color-helptext: #777;
+    --color-error: #eba613;
+    --color-visited-link: #8b6fcb;
+    --color-underline: #000;
+}
+/* Typography */
 body {
-    color: #444;
-    background-color: #fff;
+    color: var(--color-text);
+    background-color: var(--color-background);
 }
-
-.category-item a {
-    color: #444;
-}
-
 h1,
 h2,
 h3,
@@ -18,29 +25,34 @@ b,
 pre code,
 blockquote,
 .header-title {
-    color: #222;
+    color: var(--color-heading);
 }
-
 a {
-    color: #3273dc;
+    color: var(--color-link);
 }
-
 code {
-    background-color: #f2f2f2;
+    background-color: var(--color-code-bg);
 }
-
 .helptext {
-    color: #777;
+    color: var(--color-helptext);
 }
-
 .errorlist {
-    color: #eba613;
+    color: var(--color-error);
 }
-ul.blog-posts li a:visited {
-    color: #8b6fcb;
-}
-
 .underline,
 b {
-    color: #000;
+    color: var(--color-underline);
+}
+/* Layout */
+.category-item a {
+    color: var(--color-text);
+}
+.blog-posts a:visited {
+    color: var(--color-visited-link);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
 }

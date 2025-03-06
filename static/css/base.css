@@ -1,23 +1,132 @@
+:root {
+    --color-primary: #482936;
+    --color-gray: #777;
+    --color-gray-20: rgba(0, 0, 0, 0.2);
+    --font-family-primary: alegreya, jinkaiFont, Georgia, Cambria,
+        "Times New Roman", serif;
+    --font-family-secondary: "Alkatra", serif;
+}
+
+/* Layout */
 body {
-    overflow-wrap: break-word;
-    /* line-height: 1.5; */
     margin: auto;
     padding: 20px;
     max-width: 720px;
-    font-family: alegreya, jinkaiFont, Georgia, Cambria, "Times New Roman",
-        serif;
+    font-family: var(--font-family-primary);
     text-align: left;
-    word-wrap: break-word;
-
-    counter-reset: section;
+    line-height: 1.6;
 }
-.category-item a {
-    text-decoration: none;
+
+body {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    counter-reset: section;
 }
 
 .categories {
     display: inline-flex;
     margin: 1rem;
+}
+
+.category-items {
+    display: inline-flex;
+}
+
+.page-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Typography */
+.header-title {
+    font-family: var(--font-family-secondary);
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 4px 4px 4px #aaa;
+}
+.category-item,
+.category-items .category-item {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0 0.1rem;
+    border: #000 1px solid;
+    border-radius: 3px;
+    text-align: center;
+}
+.category-item {
+    padding: 0.3rem;
+    width: auto;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.category-items .category-item {
+    padding: 0.2rem;
+    font-size: 0.7rem;
+}
+/* Code Blocks */
+code {
+    padding: 2px 5px;
+}
+pre code {
+    display: block;
+    padding: 20px;
+    font-size: 14px;
+    white-space: pre-wrap;
+}
+.org-src-container {
+    border: 1px solid var(--color-gray);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+/* Images and Containers */
+img {
+    max-width: 100%;
+}
+.image-container {
+    display: inline;
+    position: relative;
+}
+.image-container a {
+    text-decoration: none;
+}
+.image-text {
+    display: none;
+}
+.image-container:hover .image-text {
+    display: inline;
+}
+/* Borders and Lines */
+.header-line {
+    width: 100%;
+    margin-top: 1.5rem;
+    border-width: 2px;
+    border-style: solid none none none;
+    border-color: var(--color-primary);
+}
+.footer-line {
+    border-top: 1px dashed var(--color-gray-20);
+    margin-top: 1em;
+    padding-bottom: 0.5em;
+    list-style: none;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .header-title {
+        font-size: 2rem;
+    }
+    .category-item {
+        font-size: 0.7rem;
+    }
+}
+
+.category-item a {
+    text-decoration: none;
 }
 
 .title {
@@ -56,16 +165,9 @@ table {
     width: 100%;
 }
 
-th {
-    border: 1px solid #777;
-}
-
+th,
 td {
     border: 1px solid #777;
-}
-
-img {
-    max-width: 100%;
 }
 
 code {
@@ -135,10 +237,6 @@ li {
     text-align: center;
 }
 
-.category-items {
-    display: inline-flex;
-}
-
 .category-items .category-item {
     padding: 0.2rem;
     font-size: 0.7rem;
@@ -146,28 +244,6 @@ li {
 
 .title {
     text-align: center;
-}
-
-.header-title {
-    font-family: "Alkatra", serif;
-    font-size: 3rem;
-    font-weight: bold;
-    text-decoration: none;
-    text-shadow: 4px 4px 4px #aaa;
-}
-
-.header-line {
-    width: 100%;
-    margin-top: 1.5rem;
-    border-width: 2px;
-    border-color: #482936;
-    border-style: solid none none none;
-}
-
-.org-src-container {
-    border: 1px solid #777;
-    padding: 1rem;
-    border-radius: 0.5rem;
 }
 
 pre {
@@ -195,35 +271,6 @@ pre {
     text-decoration: none;
 }
 
-.image-container {
-    display: inline;
-    position: relative;
-}
-
-.image-container a {
-    text-decoration: none;
-}
-
-.image-text {
-    display: none;
-}
-
-.image-container:hover .image-text {
-    display: inline;
-}
-
-.page-item {
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
-}
-
 certer {
     text-align: center;
-}
-
-.footer-line {
-    list-style: none;
-    border-top: 1px dashed var(--color-gray-20);
-    padding: 1em 0;
 }
