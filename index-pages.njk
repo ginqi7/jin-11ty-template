@@ -1,8 +1,8 @@
 ---
 pagination:
-  data: langs
-  size: 1
-  alias: lang
+        data: langs
+        size: 1
+        alias: lang
 permalink: "/{{ lang.href | slugify }}/"
 layout: base-layout.njk
 ---
@@ -11,8 +11,10 @@ layout: base-layout.njk
 
 <article>
 
+    <!-- About Section -->
     {% include 'about.njk' %}
-    
+
+    <!-- Latest Posts Section -->
     <h2> Latest </h2>
     {% set postList = collections[lang.type] | reverse %}
     {% set allSize = postList | length%}
@@ -20,20 +22,17 @@ layout: base-layout.njk
     {% set indexPostSize = postList | length %}
     {% include 'post-list.njk' %}
 
+    <!-- Show More Link -->
     <div class="more">
-	<a href="{{ lang.href }}archive/">show more {{allSize - indexPostSize}} articles </a> 
+         <a href="{{ lang.href }}archive/">Show more {{allSize - indexPostSize}} articles </a>
     </div>
 
+    <!-- Categories Section -->
     <h2> Categories </h2>
-    <div>
-	<div class="categories">
-	    {% set tagsList = collections[lang.type+"TagsList"] %}
-	    {% include 'tag.njk' %}
-	</div>
+    <div class="categories">
+    {% set tagsList = collections[lang.type+"TagsList"] %}
+    {% include 'tag.njk' %}
     </div>
-
 </article>
 
 {% include 'footer.njk' %}
-
-

@@ -1,0 +1,47 @@
+.custom-container {
+    background-color: #f9f9f9; /* 背景色 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影 */
+    border-radius: 0.5rem; /* 圆角 */
+    padding: 1rem; /* 内边距 */
+    display: flex; /* 使用 flexbox 布局 */
+    flex-direction: column; /* 垂直布局 */
+    transition: box-shadow 300ms; /* 过渡效果 */
+    margin-top: 1.5rem;
+}
+
+.custom-container:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* 悬停时的阴影 */
+}
+
+.text-gray-800 {
+    color: #2d3748; /* 字体颜色 */
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem; /* 下边距 */
+}
+
+.prose {
+    max-width: none; /* 最大宽度为none，允许文本占满整个容器 */
+}
+
+.text-gray-500 {
+    color: #718096; /* 字体颜色 */
+}
+
+.self-end {
+    align-self: flex-end; /* 在 flexbox 中设置自我对齐 */
+}
+
+.mt-2 {
+    margin-top: 0.5rem; /* 上边距 */
+}
+
+image {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    display: none;
+}

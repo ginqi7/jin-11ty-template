@@ -1,0 +1,32 @@
+---
+lang:
+  type: zh
+  href: /zh/
+pagination:
+  data: collections.zhThoughts
+  size: 10
+  alias: thought
+permalink: /zh/thoughts/{{ page.number }}/
+layout: thoughts-layout
+---
+
+{% for thought in pagination.items %}
+    <div class="custom-container">
+        <div class="text-gray-800 mb-2 prose">
+            {{ thought.rawInput | safe}}
+        </div>
+        <small class="text-gray-500 self-end mt-2"> {{ thought.data.create_date | safe}}</small>
+    </div>
+{% endfor %}
+
+<div class="pagination">
+  {% if pagination.previousPage %}
+    <a href="{{ pagination.previousPage.url }}">上一页</a>
+  {% endif %}
+
+  <span>第 {{ pagination.pageNumber }} 页</span>
+
+  {% if pagination.nextPage %}
+    <a href="{{ pagination.nextPage.url }}">下一页</a>
+  {% endif %}
+</div>

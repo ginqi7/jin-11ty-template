@@ -1,0 +1,12 @@
+---
+layout: base-layout.njk
+---
+
+{% include 'header.njk' %}
+<link rel="stylesheet" type="text/css" href="/static/css/thoughts.css" defer>
+
+<article>
+    {{ content | safe }}
+</article>
+
+{% include 'footer.njk' %}

@@ -1,0 +1,32 @@
+---
+lang:
+  type: en
+  href: /
+pagination:
+  data: collections.enThoughts
+  size: 10
+  alias: thought
+permalink: /en/thoughts/{{ page.number }}/
+layout: thoughts-layout
+---
+
+{% for thought in pagination.items %}
+    <div class="custom-container">
+        <div class="text-gray-800 mb-2 prose">
+            {{ thought.rawInput | safe}}
+        </div>
+        <small class="text-gray-500 self-end mt-2"> {{ thought.data.create_date | safe}}</small>
+    </div>
+{% endfor %}
+
+<div class="pagination">
+  {% if pagination.previousPage %}
+    <a href="{{ pagination.previousPage.url }}">Previous</a>
+  {% endif %}
+
+  <span>On {{ pagination.pageNumber }} Page</span>
+
+  {% if pagination.nextPage %}
+    <a href="{{ pagination.nextPage.url }}">Next</a>
+  {% endif %}
+</div>
