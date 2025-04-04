@@ -4,6 +4,7 @@ import Fontmin from "fontmin";
 import CleanCSS from "clean-css";
 import linkifyHtml from "linkify-html";
 import replaceDoubanUrls from "html-douban-card";
+import replaceBilibiliUrls from "html-bilibili-card";
 
 export default function (eleventyConfig) {
     // copy static files to output directory.
@@ -46,6 +47,10 @@ export default function (eleventyConfig) {
 
     eleventyConfig.addFilter("douban_card", async function (content) {
         return await replaceDoubanUrls(content);
+    });
+
+    eleventyConfig.addFilter("bilibili_card", async function (content) {
+        return await replaceBilibiliUrls(content);
     });
 
     // minify css
