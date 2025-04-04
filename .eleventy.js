@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import Fontmin from "fontmin";
 import CleanCSS from "clean-css";
+import linkifyHtml from "linkify-html";
 
 export default function (eleventyConfig) {
     // copy static files to output directory.
@@ -32,6 +33,13 @@ export default function (eleventyConfig) {
                         new Date(b.data.create_date) -
                         new Date(a.data.create_date),
                 );
+        });
+    });
+
+    eleventyConfig.addFilter("linkify", function (content) {
+        return linkifyHtml(content, {
+            target: "_blank", // Open link in a new tab
+            rel: "noopener noreferrer", // Security Settings
         });
     });
 

@@ -1,3 +1,7 @@
 _site
 .vercel
 node_modules
+thoughts/*
+!thoughts/
+posts/*
+!posts/
