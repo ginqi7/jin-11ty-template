@@ -6,7 +6,7 @@ layout: base-layout.njk
 <link rel="stylesheet" type="text/css" href="/static/css/thoughts.css" defer>
 
 <article>
-    {{ content | linkify | safe }}
+    {{ content | linkify | douban_card | safe }}
 </article>
 
 {% include 'footer.njk' %}

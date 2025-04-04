@@ -3,6 +3,7 @@ import path from "path";
 import Fontmin from "fontmin";
 import CleanCSS from "clean-css";
 import linkifyHtml from "linkify-html";
+import replaceDoubanUrls from "html-douban-card";
 
 export default function (eleventyConfig) {
     // copy static files to output directory.
@@ -41,6 +42,10 @@ export default function (eleventyConfig) {
             target: "_blank", // Open link in a new tab
             rel: "noopener noreferrer", // Security Settings
         });
+    });
+
+    eleventyConfig.addFilter("douban_card", async function (content) {
+        return await replaceDoubanUrls(content);
     });
 
     // minify css
