@@ -6,7 +6,7 @@ pagination:
   data: collections.enThoughts
   size: 10
   alias: thought
-permalink: /en/thoughts/{{ page.number }}/
+permalink: /en/thoughts/{{ pagination.pageNumber }}/
 layout: thoughts-layout
 ---
 
@@ -20,13 +20,13 @@ layout: thoughts-layout
 {% endfor %}
 
 <div class="pagination">
-  {% if pagination.previousPage %}
-    <a href="{{ pagination.previousPage.url }}">Previous</a>
+  {% if pagination.previousPageHref %}
+    <a href="{{ pagination.previousPageHref }}">Previous</a>
   {% endif %}
 
   <span>On {{ pagination.pageNumber }} Page</span>
 
   {% if pagination.nextPage %}
-    <a href="{{ pagination.nextPage.url }}">Next</a>
+    <a href="{{ pagination.nextPageHref }}">Next</a>
   {% endif %}
 </div>

@@ -31,17 +31,16 @@ export default function () {
         {
             type: "en-thoughts",
             src: "/static/svg/thoughts.svg",
-            href: "/en/thoughts",
+            href: "/en/thoughts/0",
             lang: "en",
             show: "(thoughts)",
         },
         {
             type: "zh-thoughts",
             src: "/static/svg/thoughts.svg",
-            href: "/zh/thoughts",
+            href: "/zh/thoughts/0",
             lang: "zh",
             show: "(thoughts)",
         },
-
     ];
 }

@@ -6,7 +6,7 @@ pagination:
   data: collections.zhThoughts
   size: 10
   alias: thought
-permalink: /zh/thoughts/{{ page.number }}/
+permalink: /zh/thoughts/{{ pagination.pageNumber }}/
 layout: thoughts-layout
 ---
 
@@ -20,13 +20,13 @@ layout: thoughts-layout
 {% endfor %}
 
 <div class="pagination">
-  {% if pagination.previousPage %}
-    <a href="{{ pagination.previousPage.url }}">上一页</a>
+  {% if pagination.previousPageHref %}
+    <a href="{{ pagination.previousPageHref }}">上一页</a>
   {% endif %}
 
   <span>第 {{ pagination.pageNumber }} 页</span>
 
-  {% if pagination.nextPage %}
-    <a href="{{ pagination.nextPage.url }}">下一页</a>
+  {% if pagination.nextPageHref %}
+    <a href="{{ pagination.nextPageHref }}">下一页</a>
   {% endif %}
 </div>

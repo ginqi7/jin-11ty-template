@@ -45,3 +45,7 @@ image {
 h1 {
     display: none;
 }
+
+.pagination {
+    text-align: center;
+}
