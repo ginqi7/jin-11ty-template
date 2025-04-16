@@ -5,6 +5,7 @@ import CleanCSS from "clean-css";
 import linkifyHtml from "linkify-html";
 import replaceDoubanUrls from "html-douban-card";
 import replaceBilibiliUrls from "html-bilibili-card";
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 
 export default function (eleventyConfig) {
     // copy static files to output directory.
@@ -36,8 +37,45 @@ export default function (eleventyConfig) {
                         new Date(a.data.create_date),
                 );
         });
-    });
+        let href = lang == "en" ? "" : lang;
+        eleventyConfig.addPlugin(feedPlugin, {
+            type: "atom", // or "rss", "json"
+            outputPath: `${href}/feed.xml`,
+            collection: {
+                name: lang, // iterate over `collections.posts`
+                limit: 0, // 0 means no limit
+            },
+            metadata: {
+                language: lang,
+                title: `Hello World ${lang}`,
+                subtitle: `Qiqi Jin's ${lang} Blog.`,
+                base: `https://qiqijin.com`,
+                author: {
+                    name: "Qiqi Jin",
+                    email: "ginqi7@gmail.com", // Optional
+                },
+            },
+        });
 
+        eleventyConfig.addPlugin(feedPlugin, {
+            type: "atom", // or "rss", "json"
+            outputPath: `${href}/thoughts/feed.xml`,
+            collection: {
+                name: `${lang}Thoughts`, // iterate over `collections.posts`
+                limit: 0, // 0 means no limit
+            },
+            metadata: {
+                language: lang,
+                title: `Hello World Thoughts ${lang}`,
+                subtitle: `Qiqi Jin's ${lang} Thoughts.`,
+                base: `https://qiqijin.com`,
+                author: {
+                    name: "Qiqi Jin",
+                    email: "ginqi7@gmail.com", // Optional
+                },
+            },
+        });
+    });
     eleventyConfig.addFilter("linkify", function (content) {
         return linkifyHtml(content, {
             target: "_blank", // Open link in a new tab

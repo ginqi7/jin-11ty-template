@@ -29,11 +29,25 @@ export default function () {
             show: "(Chinese)",
         },
         {
+            type: "en-rss",
+            src: "/static/svg/rss.svg",
+            href: "/feed.xml",
+            lang: "en",
+            show: "(RSS)",
+        },
+        {
+            type: "zh-rss",
+            src: "/static/svg/rss.svg",
+            href: "/zh/feed.xml",
+            lang: "zh",
+            show: "(RSS)",
+        },
+        {
             type: "en-thoughts",
             src: "/static/svg/thoughts.svg",
-            href: "/en/thoughts/0",
+            href: "/thoughts/0",
             lang: "en",
-            show: "(thoughts)",
+            show: "(Thoughts)",
         },
         {
             type: "zh-thoughts",
