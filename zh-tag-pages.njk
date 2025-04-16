@@ -15,10 +15,10 @@ layout: archive-layout
     {% set zhPostList = collections.zh | reverse %}
     {% set postList = [] %}
     {% for post in zhPostList %}
-	{% if post.data.tags.indexOf(tag) > -1  %}
+	{% if post.data.tags and post.data.tags.indexOf(tag) > -1  %}
 	    {% set postList = (postList.push(post), postList) %}
 	{% endif %}
     {%endfor%}
 
-    {% include 'post-list.njk' %}    
+    {% include 'post-list.njk' %}
 </div>
