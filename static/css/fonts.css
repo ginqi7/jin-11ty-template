@@ -16,3 +16,21 @@
     src: url("../fonts/en/Alegreya-Regular.ttf") format("TrueType");
     font-display: swap;
 }
+
+@font-face {
+    font-family: moniker;
+    src: url("../fonts/en/Moniker-Regular.ttf") format("TrueType");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: moniker-medium;
+    src: url("../fonts/en/Moniker-Medium.woff") format("TrueType");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: ReallySansLarge;
+    src: url("../fonts/en/ReallySansSmallStudent-Bold.woff") format("TrueType");
+    font-display: swap;
+}

@@ -2,103 +2,57 @@
     --color-primary: #482936;
     --color-gray: #777;
     --color-gray-20: rgba(0, 0, 0, 0.2);
-    --font-family-primary: alegreya, jinkaiFont, Georgia, Cambria,
+    --font-family-primary: moniker, jinkaiFont, Georgia, Cambria,
         "Times New Roman", serif;
     --font-family-secondary: "Alkatra", serif;
+    --font-family-medium: moniker-medium, jinkaiFont, Georgia, Cambria,
+        "Times New Roman", serif;
+    --font-family-title: "ReallySansLarge", jinkaiFont, serif;
+    --font-weight-title-bold: 700;
+    --color-text-shadow: rgba(0, 0, 0, 0.15); /* 示例：更柔和的阴影颜色 */
+    --header-title-size-default: 2.5rem;
+    --header-title-size-medium: 3rem;
+    --header-title-size-large: 3.5rem;
 }
 
-/* Layout */
+html {
+    /* Make the element's width and height include padding and border,
+       rather than adding them outside,
+       for more intuitive layout calculations. */
+    box-sizing: border-box;
+    /* (commonly 16px) */
+    font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
 body {
-    margin: auto;
-    padding: 20px;
-    max-width: 720px;
+    margin: 0 auto; /* 更明确垂直边距为0，水平自动 */
+    padding: 1.25rem; /* 使用 rem (假设 1rem = 16px, 20/16 = 1.25) */
+    max-width: 55rem; /* 使用 rem (720px / 16px = 45rem) */
     font-family: var(--font-family-primary);
-    text-align: left;
-    line-height: 1.6;
+    font-size: 1.1875rem; /* 使用 rem (19px / 16px = 1.1875) */
+    line-height: 1.6; /* 保持无单位行高 */
+    background-color: var(--color-background, white); /* 建议显式设置背景色 */
+    color: var(--color-text, #333); /* 建议显式设置默认文本颜色 */
+    overflow-wrap: break-word; /* 的作用是允许在单词内部进行换行，以防止长单词或 URL 溢出其容器。 */
 }
 
-body {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    counter-reset: section;
-}
-
-.categories {
-    display: inline-flex;
-    margin: 1rem;
-}
-
-.category-items {
-    display: inline-flex;
-}
-
-.page-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Typography */
+/* Header */
 .header-title {
     font-family: var(--font-family-secondary);
-    font-size: 3rem;
-    font-weight: bold;
+    /* font-size: 3rem; */
+    font-weight: var(--font-weight-title-bold);
     text-decoration: none;
-    text-shadow: 4px 4px 4px #aaa;
+    /* text-shadow: var(--color-text-shadow) 4px 4px 4px #aaa; */
+    font-size: var(--header-title-size-large);
+    text-shadow: 3px 3px 5px var(--color-text-shadow);
 }
-.category-item,
-.category-items .category-item {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin: 0 0.1rem;
-    border: #000 1px solid;
-    border-radius: 3px;
-    text-align: center;
-}
-.category-item {
-    padding: 0.3rem;
-    width: auto;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-.category-items .category-item {
-    padding: 0.2rem;
-    font-size: 0.7rem;
-}
-/* Code Blocks */
-code {
-    padding: 2px 5px;
-}
-pre code {
-    display: block;
-    padding: 20px;
-    font-size: 14px;
-    white-space: pre-wrap;
-}
-.org-src-container {
-    border: 1px solid var(--color-gray);
-    padding: 1rem;
-    border-radius: 0.5rem;
-}
-/* Images and Containers */
-img {
-    max-width: 100%;
-}
-.image-container {
-    display: inline;
-    position: relative;
-}
-.image-container a {
-    text-decoration: none;
-}
-.image-text {
-    display: none;
-}
-.image-container:hover .image-text {
-    display: inline;
-}
-/* Borders and Lines */
+
 .header-line {
     width: 100%;
     margin-top: 1.5rem;
@@ -106,171 +60,94 @@ img {
     border-style: solid none none none;
     border-color: var(--color-primary);
 }
-.footer-line {
-    border-top: 1px dashed var(--color-gray-20);
-    margin-top: 1em;
-    padding-bottom: 0.5em;
-    list-style: none;
+
+#preamble {
+    position: relative;
 }
-/* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-    .header-title {
-        font-size: 2rem;
-    }
-    .category-item {
-        font-size: 0.7rem;
-    }
+/* Nav */
+.nav {
+    display: flex; /* 容器本身行内流动，内部弹性布局 */
+    position: absolute;
+    gap: 1rem;
+    right: 0; /* 距离父容器右边框0像素 */
+}
+
+.image-container {
+    display: flex;
+}
+
+.image-container a {
+    text-decoration: none;
+    font-family: var(--font-family-medium);
+    color: var(--color-text);
+}
+
+/* .image-text { */
+/*     display: none; */
+/* } */
+
+.image-container:hover .image-text {
+    display: inline;
+}
+
+/* Headline */
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-family-title);
+}
+
+.page-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 保持，首尾元素靠两边 */
+}
+
+/* categories */
+.categories {
+    display: inline-flex; /* 容器本身行内流动，内部弹性布局 */
+    gap: 0.5rem; /* 推荐使用 gap 来控制 flex */
 }
 
 .category-item a {
     text-decoration: none;
 }
 
-.title {
-    border: 0;
-    text-decoration: none;
+.category-item {
+    display: flex; /* 使自身成为flex容器，用于其内部内容的对齐 */
+    align-items: center; /* 垂直居中内部内容 */
+    justify-content: center; /* 水平居中内部内容 */
+    border: #000 1px solid;
+    border-radius: 3px;
+    padding: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
-.title span {
-    font-weight: 400;
-}
-
-nav a {
-    margin-right: 10px;
-}
-
-textarea {
-    width: 100%;
-    font-size: 16px;
-}
-
-input {
-    font-size: 16px;
-}
-
-#content {
-    line-height: 1.6;
-    text-align: justify;
-}
-
-#org-div-home-and-up {
-    margin-left: 30px;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th,
-td {
-    border: 1px solid #777;
-}
-
-code {
-    padding: 2px 5px;
-}
-
-pre code {
-    display: block;
-    padding: 20px;
-    font-size: 14px;
-    white-space: pre-wrap;
-}
-
-div.highlight pre {
-    color: initial;
-    background-color: initial;
-}
-
-div.highlight code {
-    color: unset;
-    background-color: unset;
-}
-
-blockquote {
-    border-left: 1px solid #999;
-    padding-left: 20px;
-    font-style: italic;
-}
-
-footer {
-    padding: 25px;
-    text-align: center;
-}
-
-.helptext {
-    font-size: small;
-}
-
-.errorlist {
-    font-size: small;
-}
-
-ul.blog-posts li {
-    display: flex;
-}
-
-ul.blog-posts li span {
-    flex: 0 0 130px;
+.page-item .categories .category-item {
+    padding: 0.2rem;
+    font-size: 0.7rem;
 }
 
 li {
     margin: 0.4rem 0;
 }
 
-.category-item {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin-right: 0.1rem;
-    margin-left: 0.1rem;
-    border: #000 1px solid;
-    border-radius: 3px;
-    padding: 0.3rem;
-    width: auto;
+img {
+    width: 100%;
+}
+
+.figure {
     font-size: 0.8rem;
-    font-weight: bold;
-    text-align: center;
-}
-
-.category-items .category-item {
-    padding: 0.2rem;
-    font-size: 0.7rem;
-}
-
-.title {
     text-align: center;
 }
 
 pre {
-    white-space: pre-wrap; /* css-3 */
-    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-    white-space: -pre-wrap; /* Opera 4-6 */
-    white-space: -o-pre-wrap; /* Opera 7 */
-    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    width: 100%;
 }
 
-.figure {
-    text-align: center;
-}
-
-.footpara {
-    display: inline;
-}
-
-.underline {
-    text-underline-offset: 3px;
-    text-decoration: underline;
-}
-
-.home-and-up {
-    text-decoration: none;
-}
-
-certer {
+footer {
+    padding: 25px;
     text-align: center;
 }

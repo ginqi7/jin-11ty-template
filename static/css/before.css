@@ -4,14 +4,14 @@ h2::before {
     text-align: right;
     font-weight: 300;
     width: 7.5em;
-    margin-left: -8.0em;
+    margin-left: -8em;
     counter-increment: section;
     content: "Chapter " counter(section) " ";
 }
 
 div.side-note::before {
     content: "Note";
-    color: rgba(0,0,0,.75);
+    color: rgba(0, 0, 0, 0.75);
     font-weight: 400;
 }
 
@@ -31,8 +31,8 @@ ul.org-ul li::before {
     content: counter(li) ". ";
     color: #999999;
     display: inline-block;
-    width: 2em;
-    margin-left: -2em;
+    width: 1em;
+    margin-left: -1em;
 }
 
 h2::before {
@@ -41,7 +41,7 @@ h2::before {
     text-align: right;
     font-weight: 300;
     width: 7.5em;
-    margin-left: -8.0em;
+    margin-left: -8em;
     counter-increment: section;
     content: "Chapter " counter(section) " ";
 }
@@ -52,22 +52,7 @@ h3::before {
     text-align: right;
     font-weight: 300;
     width: 2.5em;
-    margin-left: -3.0em;
+    margin-left: -3em;
     counter-increment: subsection;
     content: counter(section) "." counter(subsection) " ";
 }
-
-pre::before {
-    color: #cccccc;
-    float: left;
-    text-align: right;
-    font-weight: 300;
-    width: 3.0em;
-    margin-left: -4.25em;
-    font-variant: small-caps;
-    content: "";
-}
-
-pre.src-lisp::before { content: "lisp"; }
-pre.src-org::before { content: "org"; }
-details pre.src-lisp::before { content: ""; }

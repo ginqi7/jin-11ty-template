@@ -5,13 +5,13 @@ export default function () {
         {
             type: "github",
             src: "/static/svg/github.svg",
-            href: project.github,
+            href: project().github,
             show: "(Github)",
         },
         {
             type: "email",
             src: "/static/svg/mail.svg",
-            href: "mailto:" + project.mail,
+            href: "mailto:" + project().mail,
             show: "(Email)",
         },
         {

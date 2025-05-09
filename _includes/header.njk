@@ -2,9 +2,20 @@
     <div id="preamble">
 	<div>
 	    <a aria-current="page" class="font-effect-shadow-multiple header-title" href="{{ lang.href }}"> {{ project.title }} </a>
-	    <div class="header-line">
+            <div class="nav">
+            {% for icon in icons %}
+                {% if not icon.lang or icon.lang == lang.type  %}
+                    <div class="image-container">
+                        <a href= "{{ icon.href }}"  class= "{{ icon.type }}">
+	                    <img width="24" height="24" src="{{ icon.src }}" alt="{{ icon.type }}">
+                        </a>
+                        <a href="{{ icon.href }}" class="image-text"> {{icon.show}}  </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+            <div class="header-line">
 	    </div>
 	</div>
     </div>
 </header>
-

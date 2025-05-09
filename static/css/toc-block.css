@@ -3,7 +3,9 @@
     padding-top: 0em;
     margin-top: 0em;
     text-transform: uppercase;
+    font-family: var(--font-family-title);
 }
+
 #table-of-contents ul {
     padding: 0;
     font-weight: 400;

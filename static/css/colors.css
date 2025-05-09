@@ -49,9 +49,3 @@ b {
 .blog-posts a:visited {
     color: var(--color-visited-link);
 }
-/* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-}

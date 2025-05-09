@@ -1,8 +1,1 @@
-{
-    "layout" : "post-layout",
-    "permalink" : "/{{ page.fileSlug }}/",
-    "lang" : {
-	"type" : "en",
-	"href" : "/"
-    }
-}
+{"layout" : "post-layout", "permalink" : "/{{ page.fileSlug }}/", "lang" : {"type" : "en", "href" : "/"}}
