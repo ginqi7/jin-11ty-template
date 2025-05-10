@@ -12,10 +12,11 @@ layout: base-layout.njk
 <article>
 
     <!-- About Section -->
-    {% include 'about.njk' %}
+    <h2> </span> {{ lang.about }} </h2>
+    <p>{{ lang.me | safe }}</p>
 
     <!-- Latest Posts Section -->
-    <h2> Latest </h2>
+    <h2> {{lang.latest}} </h2>
     {% set postList = collections[lang.type] | reverse %}
     {% set allSize = postList | length%}
     {% set postList = postList.slice(0, project.indexPostSize) %}
@@ -24,11 +25,14 @@ layout: base-layout.njk
 
     <!-- Show More Link -->
     <div class="more">
-         <a href="{{ lang.href }}archive/">Show more {{allSize - indexPostSize}} articles </a>
+
+        <a href="{{ lang.href }}archive/">{{ lang.more | replace("%d", allSize - indexPostSize) }} </a>
+        <!-- <a href="{{ lang.href }}archive/">Show more {{allSize - indexPostSize}} articles </a> -->
+
     </div>
 
     <!-- Categories Section -->
-    <h2> Categories </h2>
+    <h2> {{lang.categories}} </h2>
     <div class="categories">
     {% set tagsList = collections[lang.type+"TagsList"] %}
     {% include 'tag.njk' %}

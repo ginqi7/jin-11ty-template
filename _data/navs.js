@@ -21,7 +21,7 @@ export default function () {
             src: "/static/svg/languages.svg",
             href: "/",
             lang: "zh",
-            show: "(English)",
+            show: "(英文)",
             position: "header",
         },
         {
@@ -61,7 +61,7 @@ export default function () {
             src: "/static/svg/thoughts.svg",
             href: "/zh/thoughts/0",
             lang: "zh",
-            show: "(thoughts)",
+            show: "(想法)",
             position: "header",
         },
     ];
