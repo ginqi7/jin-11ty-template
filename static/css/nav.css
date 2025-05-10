@@ -1,0 +1,44 @@
+/* Nav */
+header .nav {
+    display: flex; /* 容器本身行内流动，内部弹性布局 */
+    position: absolute;
+    gap: 1rem;
+    right: 0; /* 距离父容器右边框0像素 */
+}
+
+.image-container {
+    display: flex; /* 将容器设为 flex 容器 */
+    align-items: center; /* 垂直居中所有 flex 子项 */
+    gap: 0.5; /* 可选：在图片和文字之间添加一些间距 */
+}
+
+header .image-container a {
+    text-decoration: none;
+    font-family: var(--font-family-medium);
+    color: var(--color-text);
+}
+
+/* .image-text { */
+/*     display: none; */
+/* } */
+
+.image-container:hover .image-text {
+    display: inline;
+}
+
+footer .nav {
+    display: inline-flex;
+    gap: 1rem;
+    text-align: center;
+}
+
+footer img {
+    width: 16px;
+    height: 16px;
+}
+
+footer .image-container a {
+    text-decoration: none;
+    font-size: 0.7rem;
+    color: var(--color-text);
+}

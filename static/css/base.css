@@ -55,7 +55,7 @@ body {
 
 .header-line {
     width: 100%;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     border-width: 2px;
     border-style: solid none none none;
     border-color: var(--color-primary);
@@ -63,31 +63,6 @@ body {
 
 #preamble {
     position: relative;
-}
-/* Nav */
-.nav {
-    display: flex; /* 容器本身行内流动，内部弹性布局 */
-    position: absolute;
-    gap: 1rem;
-    right: 0; /* 距离父容器右边框0像素 */
-}
-
-.image-container {
-    display: flex;
-}
-
-.image-container a {
-    text-decoration: none;
-    font-family: var(--font-family-medium);
-    color: var(--color-text);
-}
-
-/* .image-text { */
-/*     display: none; */
-/* } */
-
-.image-container:hover .image-text {
-    display: inline;
 }
 
 /* Headline */
@@ -147,7 +122,15 @@ pre {
     width: 100%;
 }
 
+.footer-line {
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-width: 2px;
+    border-style: solid none none none;
+    border-color: var(--color-primary);
+}
+
 footer {
-    padding: 25px;
     text-align: center;
 }

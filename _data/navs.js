@@ -7,12 +7,14 @@ export default function () {
             src: "/static/svg/github.svg",
             href: project().github,
             show: "(Github)",
+            position: "footer",
         },
         {
             type: "email",
             src: "/static/svg/mail.svg",
             href: "mailto:" + project().mail,
             show: "(Email)",
+            position: "footer",
         },
         {
             type: "en-language",
@@ -20,6 +22,7 @@ export default function () {
             href: "/",
             lang: "zh",
             show: "(English)",
+            position: "header",
         },
         {
             type: "zh-language",
@@ -27,6 +30,7 @@ export default function () {
             href: "/zh",
             lang: "en",
             show: "(Chinese)",
+            position: "header",
         },
         {
             type: "en-rss",
@@ -34,6 +38,7 @@ export default function () {
             href: "/feed.xml",
             lang: "en",
             show: "(RSS)",
+            position: "header",
         },
         {
             type: "zh-rss",
@@ -41,6 +46,7 @@ export default function () {
             href: "/zh/feed.xml",
             lang: "zh",
             show: "(RSS)",
+            position: "header",
         },
         {
             type: "en-thoughts",
@@ -48,6 +54,7 @@ export default function () {
             href: "/thoughts/0",
             lang: "en",
             show: "(Thoughts)",
+            position: "header",
         },
         {
             type: "zh-thoughts",
@@ -55,6 +62,7 @@ export default function () {
             href: "/zh/thoughts/0",
             lang: "zh",
             show: "(thoughts)",
+            position: "header",
         },
     ];
 }

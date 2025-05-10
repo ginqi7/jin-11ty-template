@@ -3,16 +3,16 @@
 	<div>
 	    <a aria-current="page" class="font-effect-shadow-multiple header-title" href="{{ lang.href }}"> {{ project.title }} </a>
             <div class="nav">
-            {% for icon in icons %}
-                {% if not icon.lang or icon.lang == lang.type  %}
-                    <div class="image-container">
-                        <a href= "{{ icon.href }}"  class= "{{ icon.type }}">
-	                    <img width="24" height="24" src="{{ icon.src }}" alt="{{ icon.type }}">
-                        </a>
-                        <a href="{{ icon.href }}" class="image-text"> {{icon.show}}  </a>
-                    </div>
-                {% endif %}
-            {% endfor %}
+                {% for nav in navs %}
+                    {% if (not nav.lang or nav.lang == lang.type) and nav.position == 'header'  %}
+                        <div class="image-container">
+                            <a href= "{{ nav.href }}"  class= "{{ nav.type }}">
+	                        <img width="24" height="24" src="{{ nav.src }}" alt="{{ nav.type }}">
+                            </a>
+                            <a href="{{ nav.href }}" class="image-text"> {{nav.show}}  </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
             <div class="header-line">
 	    </div>

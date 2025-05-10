@@ -1,4 +1,20 @@
 <footer>
-    <small>© Copyright {{ project.currentYear }}, {{ project.author }}
-    </small>
+    <div class="footer-line" ></div>
+        <div class="nav">
+            {% for nav in navs %}
+                {% if (not nav.lang or nav.lang == lang.type) and nav.position == 'footer'  %}
+                    <div class="image-container">
+                        <a href= "{{ nav.href }}"  class= "{{ nav.type }}">
+                            <img width="24" height="24" src="{{ nav.src }}" alt="{{ nav.type }}">
+                        </a>
+                        <a href="{{ nav.href }}" class="image-text"> {{nav.show}}  </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div>
+        <small>© Copyright {{ project.currentYear }}, {{ project.author }}
+        </small>
+        </div>
 </footer>
