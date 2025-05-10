@@ -62,3 +62,10 @@
 #table-of-contents h2:before {
     content: "⌘";
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #table-of-contents {
+        display: none;
+    }
+}

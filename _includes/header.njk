@@ -3,6 +3,12 @@
 	<div>
 	    <a aria-current="page" class="font-effect-shadow-multiple header-title" href="{{ lang.href }}"> {{ project.title }} </a>
             <div class="nav">
+                <input type="checkbox" id="nav-active" class="nav-active-checkbox">
+                <div class="nav__toggle">
+                    <label for="nav-active">
+                        <span>Menu</span>
+                    </label>
+                </div>
                 {% for nav in navs %}
                     {% if (not nav.lang or nav.lang == lang.type) and nav.position == 'header'  %}
                         <div class="image-container">
