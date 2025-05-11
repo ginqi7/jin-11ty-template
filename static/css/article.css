@@ -78,3 +78,8 @@ body {
 h2 {
     counter-reset: subsection;
 }
+
+article img {
+    border-radius: 15px;
+    width: 90%;
+}
