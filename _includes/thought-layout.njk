@@ -1,0 +1,22 @@
+---
+layout: base-layout.njk
+---
+
+<!-- Get LangType -->
+{% set langType = page.filePathStem | linkLanguage %}
+<!-- Get Home Href  -->
+{% if langType == 'zh' %} {% set href = "/zh/"%} {% else %} {% set href = "/"%}
+{% endif %}
+<!-- Combine langType -->
+{% set lang = {href: href, type: langType} %}
+
+<!-- hello -->
+{% include 'header.njk' %}
+<link rel="stylesheet" type="text/css" href="/static/css/thoughts.css" defer />
+<article>{{ content | linkify | douban_card | bilibili_card | safe }}</article>
+
+<div class="pagination">
+  <div><a href="{{href}}thoughts/"> Random </a></div>
+  <div><a href="{{href}}/thoughts/0/"> More </a></div>
+</div>
+{% include 'footer.njk' %}

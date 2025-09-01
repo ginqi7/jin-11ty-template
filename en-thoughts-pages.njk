@@ -11,22 +11,24 @@ layout: thoughts-layout
 ---
 
 {% for thought in pagination.items %}
-    <div class="custom-container">
-        <div class="text-gray-800 mb-2 prose">
-            {{ thought.rawInput | safe}}
-        </div>
-        <small class="text-gray-500 self-end mt-2"> {{ thought.data.create_date | safe}}</small>
-    </div>
+<div class="custom-container">
+  <div class="text-gray-800 mb-2 prose">{{ thought.rawInput | safe}}</div>
+  <small class="text-gray-500 self-end mt-2">
+    {{ thought.data.create_date | safe}}</small
+  >
+</div>
 {% endfor %}
 
 <div class="pagination">
+  <a href="/thoughts/">Random</a>
+
   {% if pagination.previousPageHref %}
-    <a href="{{ pagination.previousPageHref }}">Previous</a>
+  <a href="{{ pagination.previousPageHref }}">Previous</a>
   {% endif %}
 
   <span>On {{ pagination.pageNumber }} Page</span>
 
   {% if pagination.nextPage %}
-    <a href="{{ pagination.nextPageHref }}">Next</a>
+  <a href="{{ pagination.nextPageHref }}">Next</a>
   {% endif %}
 </div>

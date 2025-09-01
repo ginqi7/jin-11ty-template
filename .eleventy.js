@@ -7,11 +7,26 @@ import replaceDoubanUrls from "html-douban-card";
 import replaceBilibiliUrls from "html-bilibili-card";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 
+function allLinks(data) {
+    return data.map((item) => {
+        console.log(item.url);
+        return `'${item.url}'`;
+    });
+}
+
+function linkLanguage(data) {
+    console.log(data.split("/"));
+    return data.split("/").includes("zh") ? "zh" : "en";
+}
+
 export default function (eleventyConfig) {
     // copy static files to output directory.
     eleventyConfig.addPassthroughCopy("static/*");
     eleventyConfig.addPassthroughCopy("static/fonts/en/*");
     eleventyConfig.addPassthroughCopy("static/svg/*");
+
+    eleventyConfig.addFilter("allLinks", allLinks);
+    eleventyConfig.addFilter("linkLanguage", linkLanguage);
 
     // add some language collections.
     listPostLangs().forEach((lang) => {

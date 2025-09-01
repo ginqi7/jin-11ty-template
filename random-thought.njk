@@ -1,0 +1,27 @@
+---
+pagination:
+  data: langs
+  size: 1
+  alias: lang
+permalink: "{{ lang.href }}thoughts/"
+---
+
+<div id="content" class="content">
+  <h1 class="title">Archive</h1>
+  {%set thoughtType = lang.type + "Thoughts" %}
+  <!-- Get thoughts collections. -->
+  {% set postList = collections[thoughtType] %}
+</div>
+
+<script>
+  window.onload = function () {
+    // 定义你的链接数组
+    var links = [{{ postList | allLinks | safe}}]
+    // 随机选择一个链接
+    var randomIndex = Math.floor(Math.random() * links.length);
+    var target = links[randomIndex];
+
+    // 跳转到该页面
+    window.location.href = target;
+  };
+</script>
